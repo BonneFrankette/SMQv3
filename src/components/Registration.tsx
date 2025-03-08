@@ -30,7 +30,7 @@ const Registration = () => {
             <div className="p-8">
               <div className="flex justify-center mb-8">
                 <div className="text-center">
-                  <span className="text-4xl font-bold text-white font-playfair">$7</span>
+                  <span className="text-4xl font-bold text-white font-playfair">$10</span>
                   <span className="text-gray-300 ml-2 font-raleway">CAD</span>
                   <p className="text-gray-400 mt-1 font-raleway">par personne</p>
                 </div>

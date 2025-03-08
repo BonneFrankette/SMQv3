@@ -33,11 +33,13 @@ const Navbar = () => {
           </a>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <a href="#about" className="text-white hover:text-blue-400 transition-colors font-raleway">À propos</a>
             <a href="#schedule" className="text-white hover:text-blue-400 transition-colors font-raleway">Programme</a>
-            <a href="#speakers" className="text-white hover:text-blue-400 transition-colors font-raleway">Conférenciers et Auteurs</a>
+            <a href="#speakers" className="text-white hover:text-blue-400 transition-colors font-raleway">Conférenciers</a>
+            <a href="#obediences" className="text-white hover:text-blue-400 transition-colors font-raleway">Obédiences</a>
             <a href="#venue" className="text-white hover:text-blue-400 transition-colors font-raleway">Lieu</a>
+            <a href="#sponsors" className="text-white hover:text-blue-400 transition-colors font-raleway">Commanditaires</a>
             <a href="#registration" className="btn btn-sm btn-gradient font-raleway">S'inscrire</a>
           </div>
           
@@ -79,7 +81,14 @@ const Navbar = () => {
                 className="text-white hover:text-blue-400 transition-colors font-raleway"
                 onClick={() => setIsOpen(false)}
               >
-                Conférenciers et Auteurs
+                Conférenciers
+              </a>
+              <a 
+                href="#obediences" 
+                className="text-white hover:text-blue-400 transition-colors font-raleway"
+                onClick={() => setIsOpen(false)}
+              >
+                Obédiences
               </a>
               <a 
                 href="#venue" 
@@ -87,6 +96,13 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 Lieu
+              </a>
+              <a 
+                href="#sponsors" 
+                className="text-white hover:text-blue-400 transition-colors font-raleway"
+                onClick={() => setIsOpen(false)}
+              >
+                Commanditaires
               </a>
               <a 
                 href="#registration" 
