@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark-800: #121212;
+  --dark-700: #1e1e1e;
+  --dark-900: #0a0a0a;
+  --quebec-blue: #0047AB;
+  --quebec-blue-light: #1E64D5;
+}
+
+body {
+  background-color: var(--dark-800);
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.bg-dark-800 {
+  background-color: var(--dark-800);
+}
+
+.bg-dark-700 {
+  background-color: var(--dark-700);
+}
+
+.bg-dark-900 {
+  background-color: var(--dark-900);
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-raleway {
+  font-family: 'Raleway', sans-serif;
+}
+
+.typography-fix {
+  text-rendering: optimizeLegibility;
+}
+
+.speaker-image-container {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.speaker-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.blue-filter-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 64, 175, 0.3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.custom-position-face {
+  object-position: center 20%;
+}
+
+.custom-position-top {
+  object-position: center top;
+}
+
+.custom-position-center {
+  object-position: center center;
+}
+
+.speaker-bio {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* Styles pour Leaflet */
+.leaflet-container {
+  z-index: 1;
+}
+
+.leaflet-control-container .leaflet-routing-container-hide {
+  display: none;
+}
+
+/* Styles pour les boutons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--quebec-blue);
+  color: white;
+  border: 2px solid var(--quebec-blue);
+}
+
+.btn-primary:hover {
+  background-color: var(--quebec-blue-light);
+  border-color: var(--quebec-blue-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 100, 213, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.btn-gradient {
+  background: linear-gradient(to right, var(--quebec-blue), var(--quebec-blue-light));
+  color: white;
+  border: none;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 100, 213, 0.3);
+}
+
+.btn-gradient::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, var(--quebec-blue-light), var(--quebec-blue));
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.btn-gradient:hover::after {
+  opacity: 1;
+}
