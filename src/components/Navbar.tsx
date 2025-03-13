@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const eventbriteLink = "https://www.eventbrite.com/e/salon-maconnique-du-quebec-2025-tickets-1276560750569?aff=oddtdtcreator";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +41,7 @@ const Navbar = () => {
             <a href="#obediences" className="text-white hover:text-blue-400 transition-colors font-raleway">Obédiences</a>
             <a href="#venue" className="text-white hover:text-blue-400 transition-colors font-raleway">Lieu</a>
             <a href="#sponsors" className="text-white hover:text-blue-400 transition-colors font-raleway">Commanditaires</a>
-            <a href="#registration" className="btn btn-sm btn-gradient font-raleway">S'inscrire</a>
+            <a href={eventbriteLink} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-gradient font-raleway">S'inscrire</a>
           </div>
           
           {/* Mobile Navigation Button */}
@@ -105,7 +106,9 @@ const Navbar = () => {
                 Commanditaires
               </a>
               <a 
-                href="#registration" 
+                href={eventbriteLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-sm btn-gradient inline-block text-center font-raleway"
                 onClick={() => setIsOpen(false)}
               >

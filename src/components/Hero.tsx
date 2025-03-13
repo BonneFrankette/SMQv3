@@ -3,6 +3,7 @@ import { Calendar, MapPin, Star } from 'lucide-react'
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const eventbriteLink = "https://www.eventbrite.com/e/salon-maconnique-du-quebec-2025-tickets-1276560750569?aff=oddtdtcreator";
 
   // This effect will handle video playback when component mounts
   useEffect(() => {
@@ -72,13 +73,13 @@ const Hero = () => {
             </p>
           </div>
           
-          {/* Boutons restaurés avec les classes appropriées */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-24">
-            <a href="#registration" className="btn btn-primary font-raleway">
+          {/* Nouveau bouton d'inscription */}
+          <div className="mb-24">
+            <a 
+              href="#registration" 
+              className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-400 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 font-raleway"
+            >
               S'inscrire maintenant
-            </a>
-            <a href="#about" className="btn btn-secondary font-raleway">
-              En savoir plus
             </a>
           </div>
         </div>

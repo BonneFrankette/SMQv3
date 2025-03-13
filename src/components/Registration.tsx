@@ -2,6 +2,8 @@ import React from 'react'
 import { Check } from 'lucide-react'
 
 const Registration = () => {
+  const eventbriteLink = "https://www.eventbrite.com/e/salon-maconnique-du-quebec-2025-tickets-1276560750569?aff=oddtdtcreator";
+
   return (
     <section id="registration" className="py-20 bg-dark-800 relative overflow-hidden">
       {/* Background decoration */}
@@ -67,7 +69,9 @@ const Registration = () => {
               
               <div className="text-center">
                 <a 
-                  href="mailto:contact@salonmaconniquequebec.org?subject=Inscription%20au%20Salon%20Maçonnique%20du%20Québec" 
+                  href={eventbriteLink}
+                  target="_blank"
+                  rel="noopener noreferrer" 
                   className="btn btn-gradient inline-block font-raleway"
                 >
                   S'inscrire maintenant

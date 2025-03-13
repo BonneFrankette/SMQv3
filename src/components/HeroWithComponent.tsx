@@ -3,6 +3,8 @@ import VideoBackground from './VideoBackground'
 import { Calendar, MapPin, Star } from 'lucide-react'
 
 const HeroWithComponent = () => {
+  const eventbriteLink = "https://www.eventbrite.com/e/salon-maconnique-du-quebec-2025-tickets-1276560750569?aff=oddtdtcreator";
+
   return (
     <section 
       id="hero" 
@@ -51,13 +53,13 @@ const HeroWithComponent = () => {
             </p>
           </div>
           
-          {/* Augmentation de la marge inférieure pour assurer la visibilité des boutons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-24">
-            <a href="#registration" className="btn btn-gradient font-raleway">
+          {/* Nouveau bouton d'inscription */}
+          <div className="mb-24">
+            <a 
+              href="#registration" 
+              className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-400 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 font-raleway"
+            >
               S'inscrire maintenant
-            </a>
-            <a href="#about" className="btn btn-secondary font-raleway">
-              En savoir plus
             </a>
           </div>
         </div>

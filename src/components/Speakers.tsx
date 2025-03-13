@@ -27,7 +27,7 @@ const Speakers = () => {
       name: "Alain-Noël Dubart",
       title: "Ancien Grand Maître, GLDF",
       bio: "Chirurgien orthopédiste de profession et Franc-Maçon depuis 1984, Alain-Noël Dubart a marqué l'histoire de la Grande Loge de France en tant que Grand Maître. Président de multiples associations culturelles maçonniques.",
-      image: "http://roseraiedesphilosophes.ca/wp-content/uploads/2025/03/alainnoel.webp",
+      image: "http://roseraiedesphilosophes.ca/wp-content/uploads/2025/03/WhatsApp-Image-2025-03-09-at-15.34.49-1.jpeg",
       position: "custom-position-top"
     },
     {
