@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Raleway:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,10 +12,18 @@
   --quebec-blue-light: #1E64D5;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--dark-800);
   color: white;
   font-family: 'Raleway', sans-serif;
+  max-width: 100vw;
 }
 
 .bg-dark-800 {
@@ -36,50 +46,96 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .typography-fix {
   text-rendering: optimizeLegibility;
 }
 
-.speaker-image-container {
-  height: 300px;
-  overflow: hidden;
+/* Effet de texte pour la navigation */
+.nav-text-effect {
   position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
-.speaker-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.nav-text-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  transition: all 0.4s ease;
+}
+
+a:hover .nav-text-effect {
+  transform: translateY(-1px);
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+/* Animation pour le menu actif */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.nav-active-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Speaker component styles */
+.speaker-image-container {
   position: relative;
-  z-index: 1;
+  overflow: hidden;
+  height: 250px;
 }
 
 .blue-filter-overlay {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(30, 64, 175, 0.3);
+  z-index: 1;
+}
+
+.speaker-image {
   width: 100%;
   height: 100%;
-  background-color: rgba(30, 64, 175, 0.3);
-  z-index: 2;
-  pointer-events: none;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  position: relative;
+  z-index: 0;
+}
+
+.speaker-card:hover .speaker-image {
+  transform: scale(1.05);
 }
 
 .custom-position-face {
   object-position: center 20%;
 }
 
-.custom-position-top {
-  object-position: center top;
-}
-
 .custom-position-center {
   object-position: center center;
 }
 
+.custom-position-top {
+  object-position: center top;
+}
+
 .speaker-bio {
-  text-align: justify;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* Styles pour Leaflet */
@@ -157,4 +213,117 @@ body {
 
 .btn-gradient:hover::after {
   opacity: 1;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* Styles pour le slider d'images */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+/* Amélioration pour le slider d'images */
+.slider-image {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.slider-navigation-button {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+section:hover .slider-navigation-button {
+  opacity: 1;
+}
+
+/* Animation pour le titre */
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-text {
+  background: linear-gradient(90deg, #3b82f6, #93c5fd, #3b82f6);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientText 6s linear infinite;
+}
+
+/* Animation pour le menu mobile */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Assurer que le contenu est toujours centré */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
 }

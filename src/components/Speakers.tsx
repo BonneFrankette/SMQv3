@@ -28,14 +28,14 @@ const Speakers = () => {
       title: "Ancien Grand Maître, GLDF",
       bio: "Chirurgien orthopédiste de profession et Franc-Maçon depuis 1984, Alain-Noël Dubart a marqué l'histoire de la Grande Loge de France en tant que Grand Maître. Président de multiples associations culturelles maçonniques.",
       image: "http://roseraiedesphilosophes.ca/wp-content/uploads/2025/03/WhatsApp-Image-2025-03-09-at-15.34.49-1.jpeg",
-      position: "custom-position-top"
+      position: "custom-position-face"
     },
     {
       name: "Damien Charitat",
       title: "Co-Président, SCRCF",
       bio: "Co-Président du Suprême Conseil des Rites Confédérés de France (SCRCF), Damien Charitat est un chercheur et praticien reconnu des traditions initiatiques occidentales. Héritier des filiations Ambelain-Leterme & Font.",
       image: "http://roseraiedesphilosophes.ca/wp-content/uploads/2025/03/WhatsApp-Image-2025-03-02-at-17.27.38.jpeg",
-      position: "custom-position-center"
+      position: "custom-position-face"
     },
     {
       name: "Jacques G. Ruelland",
@@ -61,12 +61,12 @@ const Speakers = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {speakers.map((speaker, index) => (
             <div key={index} className="speaker-card bg-dark-700 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-blue-500/20">
-              <div className="speaker-image-container">
-                <div className="blue-filter-overlay"></div>
+              <div className="speaker-image-container h-64 relative overflow-hidden">
+                <div className="blue-filter-overlay absolute inset-0 bg-blue-900/30 z-10"></div>
                 <img 
                   src={speaker.image} 
                   alt={speaker.name} 
-                  className={`speaker-image ${speaker.position}`}
+                  className={`speaker-image w-full h-full object-cover object-center ${speaker.position}`}
                 />
               </div>
               <div className="p-6">
@@ -78,6 +78,54 @@ const Speakers = () => {
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        .speaker-image-container {
+          position: relative;
+          overflow: hidden;
+          height: 250px;
+        }
+        
+        .blue-filter-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(30, 64, 175, 0.3);
+          z-index: 1;
+        }
+        
+        .speaker-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+          position: relative;
+          z-index: 0;
+        }
+        
+        .speaker-card:hover .speaker-image {
+          transform: scale(1.05);
+        }
+        
+        .custom-position-face {
+          object-position: center 20%;
+        }
+        
+        .custom-position-center {
+          object-position: center center;
+        }
+        
+        .custom-position-top {
+          object-position: center top;
+        }
+        
+        .speaker-bio {
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+      `}</style>
     </section>
   )
 }
