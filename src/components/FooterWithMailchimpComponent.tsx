@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import DirectMailchimpForm from './DirectMailchimpForm'
+import React from 'react'
+import MailchimpForm from './MailchimpForm'
 
 const Footer = () => {
   // Configuration Mailchimp
@@ -62,7 +62,7 @@ const Footer = () => {
             <p className="text-gray-400 mb-4 font-raleway">
               Abonnez-vous pour recevoir les dernières nouvelles concernant l'événement.
             </p>
-            <DirectMailchimpForm 
+            <MailchimpForm 
               serverPrefix={MAILCHIMP_SERVER_PREFIX}
               u={MAILCHIMP_U}
               id={MAILCHIMP_ID}

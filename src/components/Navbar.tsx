@@ -18,7 +18,7 @@ const Navbar = () => {
       }
       
       // Détection de la section active
-      const sections = ["about", "schedule", "speakers", "obediences", "venue", "sponsors"];
+      const sections = ["about", "schedule", "speakers", "obediences", "venue", "sponsors", "registration"];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -60,16 +60,14 @@ const Navbar = () => {
             {/* Menu items with enhanced hover effects */}
             <NavItem href="#about" label="À propos" isActive={activeSection === "about"} />
             <NavItem href="#schedule" label="Programme" isActive={activeSection === "schedule"} />
-            <NavItem href="#speakers" label="Conférenciers" isActive={activeSection === "speakers"} />
+            <NavItem href="#speakers" label="Conférenciers et Auteurs" isActive={activeSection === "speakers"} />
             <NavItem href="#obediences" label="Obédiences" isActive={activeSection === "obediences"} />
             <NavItem href="#venue" label="Lieu" isActive={activeSection === "venue"} />
             <NavItem href="#sponsors" label="Commanditaires" isActive={activeSection === "sponsors"} />
             
-            {/* Registration button with enhanced styling */}
+            {/* Registration button with enhanced styling - Updated to link to registration section */}
             <a 
-              href={eventbriteLink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+              href="#registration" 
               className="ml-3 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 border border-blue-400/30 font-raleway relative overflow-hidden group"
             >
               <span className="relative z-10">S'inscrire</span>
@@ -98,16 +96,14 @@ const Navbar = () => {
             <div className="flex flex-col space-y-3 px-4 py-5">
               <MobileNavItem href="#about" label="À propos" onClick={() => setIsOpen(false)} isActive={activeSection === "about"} />
               <MobileNavItem href="#schedule" label="Programme" onClick={() => setIsOpen(false)} isActive={activeSection === "schedule"} />
-              <MobileNavItem href="#speakers" label="Conférenciers" onClick={() => setIsOpen(false)} isActive={activeSection === "speakers"} />
+              <MobileNavItem href="#speakers" label="Conférenciers et Auteurs" onClick={() => setIsOpen(false)} isActive={activeSection === "speakers"} />
               <MobileNavItem href="#obediences" label="Obédiences" onClick={() => setIsOpen(false)} isActive={activeSection === "obediences"} />
               <MobileNavItem href="#venue" label="Lieu" onClick={() => setIsOpen(false)} isActive={activeSection === "venue"} />
               <MobileNavItem href="#sponsors" label="Commanditaires" onClick={() => setIsOpen(false)} isActive={activeSection === "sponsors"} />
               
               <div className="pt-3">
                 <a 
-                  href={eventbriteLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#registration"
                   className="block w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium rounded-lg text-center font-raleway border border-blue-400/30 shadow-md"
                   onClick={() => setIsOpen(false)}
                 >
@@ -129,8 +125,8 @@ const NavItem = ({ href, label, isActive }: { href: string; label: string; isAct
       href={href} 
       className={`relative px-4 py-2.5 transition-all duration-300 font-raleway group ${
         isActive 
-          ? 'text-blue-300 font-semibold' 
-          : 'text-white hover:text-blue-200'
+          ? 'text-blue-300 font-bold' 
+          : 'text-white hover:text-blue-200 font-bold'
       }`}
     >
       <span className="relative z-10 nav-text-effect">{label}</span>
@@ -159,8 +155,8 @@ const MobileNavItem = ({ href, label, onClick, isActive }: { href: string; label
       href={href} 
       className={`flex items-center px-4 py-3 rounded-lg transition-all duration-300 font-raleway ${
         isActive 
-          ? 'bg-blue-600/30 text-blue-200 font-semibold' 
-          : 'text-white hover:bg-blue-600/20'
+          ? 'bg-blue-600/30 text-blue-200 font-bold' 
+          : 'text-white hover:bg-blue-600/20 font-bold'
       }`}
       onClick={onClick}
     >

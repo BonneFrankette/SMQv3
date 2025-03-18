@@ -69,7 +69,7 @@ const Registration = () => {
               
               <div className="text-center">
                 <a 
-                  href={eventbriteLink}
+                  href="https://www.eventbrite.com/e/salon-maconnique-du-quebec-2025-tickets-1276560750569?aff=oddtdtcreator"
                   target="_blank"
                   rel="noopener noreferrer" 
                   className="btn btn-gradient inline-block font-raleway"
@@ -77,7 +77,7 @@ const Registration = () => {
                   S'inscrire maintenant
                 </a>
                 <p className="text-gray-400 mt-4 text-sm font-raleway">
-                  Pour toute question, contactez-nous à <a href="mailto:contact@salonmaconniquequebec.org" className="text-blue-400 hover:underline">contact@salonmaconniquequebec.org</a>
+                  Pour toute question, contactez-nous à <a href="mailto:info@salonmaconniqueduquebec.org" className="text-blue-400 hover:underline">info@salonmaconniqueduquebec.org</a>
                 </p>
               </div>
             </div>
